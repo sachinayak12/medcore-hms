@@ -1,0 +1,116 @@
+# Business Requirements Document (BRD)
+
+| Field | Value |
+|------|------|
+| **Project** | MedCore Hospital Management System |
+| **Version** | 1.0 |
+| **Architecture** | Microservices |
+| **Author** | Sachidanand Nayak |
+| **Status** | Draft |
+
+---
+
+# 1. Business Problem
+
+Many hospitals use separate systems for registration, appointments, billing and pharmacy. This causes duplicate data, scheduling conflicts and poor coordination between departments.
+
+**MedCore HMS** aims to provide one centralized platform for all hospital operations.
+
+---
+
+# 2. Business Objective
+
+The system should:
+
+- Register and manage patients
+- Schedule appointments
+- Maintain electronic medical records
+- Generate bills
+- Manage pharmacy inventory
+- Keep complete audit history
+
+---
+
+# 3. Stakeholders
+
+| Stakeholder | Responsibility |
+|------------|----------------|
+| Receptionist | Patient registration & appointments |
+| Doctor | Consultation & prescriptions |
+| Lab Technician | Upload lab reports |
+| Pharmacist | Medicine dispensing |
+| Administrator | User management & reports |
+| Patient | View appointments & reports |
+
+---
+
+# 4. Project Scope
+
+## In Scope (MVP)
+
+- Patient Management
+- Appointment Scheduling
+- Doctor Consultation
+- Billing
+- User Authentication
+- Audit Logs
+
+## Out of Scope
+
+- Insurance claims
+- Online payment gateway
+- Mobile application
+- Telemedicine
+
+---
+
+# 5. Business Workflow
+
+Patient Registration
+
+↓
+
+Appointment Booking
+
+↓
+
+Doctor Consultation
+
+↓
+
+Lab / Pharmacy
+
+↓
+
+Billing & Discharge
+
+---
+
+# 6. Success Metrics
+
+| KPI | Target |
+|------|--------|
+| Registration Time | < 2 minutes |
+| Appointment Conflict | 0 |
+| API Response | < 300 ms |
+| Audit Coverage | 100% |
+
+---
+
+# 7. Risks
+
+| Risk | Mitigation |
+|------|------------|
+| Double booking | Slot validation |
+| Duplicate patients | Unique phone number |
+| Unauthorized access | JWT + RBAC |
+| Slow dashboard | Redis cache |
+
+---
+
+# 8. Future Enhancements
+
+- Insurance module
+- Patient mobile app
+- AI diagnosis assistance
+- Online payments
