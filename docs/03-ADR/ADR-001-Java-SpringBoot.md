@@ -1,4 +1,4 @@
-# ADR-001: Selection of Java 21 & Spring Boot 3.5
+# ADR-001: Selection of Java 21 & Spring Boot 4.1.1
 
 **Status:** Accepted
 
@@ -40,7 +40,7 @@ The selected technology should satisfy the following requirements:
 
 ## 3. Options Considered
 
-### Option 1 — Java 21 + Spring Boot 3.5
+### Option 1 — Java 21 + Spring Boot 4.1.1
 
 **Advantages**
 
@@ -58,13 +58,13 @@ The selected technology should satisfy the following requirements:
 
 ---
 
-### Option 2 — Node.js (Express/NestJS)
+### Option 2 — Node.js (Express / NestJS)
 
 **Advantages**
 
 * Fast development
 * Lightweight runtime
-* Good for I/O intensive applications
+* Good for I/O-intensive applications
 
 **Disadvantages**
 
@@ -85,15 +85,15 @@ The selected technology should satisfy the following requirements:
 **Disadvantages**
 
 * Smaller Java ecosystem compatibility
-* Less aligned with current team expertise
+* Less aligned with existing team expertise
 
 ---
 
 ## 4. Decision
 
-**We will use Java 21 with Spring Boot 3.5.**
+**MedCore HMS will use Java 21 with Spring Boot 4.1.1 as the backend technology stack.**
 
-This provides the best balance of scalability, security, transactional reliability, and enterprise tooling for MedCore HMS.
+This combination provides long-term LTS support, a mature enterprise ecosystem, excellent Spring Cloud integration, strong security capabilities, and reliable transactional processing for healthcare applications.
 
 ---
 
@@ -101,36 +101,40 @@ This provides the best balance of scalability, security, transactional reliabili
 
 ### Positive
 
-* Easy integration with Spring Security
-* Native support for REST APIs
-* Strong Kafka ecosystem
-* Excellent testing support
-* Production-ready observability
+* Strong Spring ecosystem for enterprise development
+* Native support for RESTful APIs
+* Seamless integration with Spring Security and Kafka
+* Excellent testing and observability support
+* Long-term maintainability
 
 ### Negative
 
-* Higher JVM memory usage
-* More boilerplate compared to Node.js
+* Higher JVM memory usage compared to Node.js
+* Slightly steeper learning curve for new developers
+* More infrastructure components in a microservices architecture
 
 ---
 
 ## 6. Impacted Components
 
+The following services will be implemented using Java 21 and Spring Boot 4.1.1:
+
 * API Gateway
+* Eureka Server
+* Config Server
 * Auth Service
 * Patient Service
 * Appointment Service
 * Billing Service
-* Notification Service
-
-All backend services will use Java 21 and Spring Boot 3.5.
+* Notification Service (Phase 2)
 
 ---
 
 ## 7. References
 
 * Java 21 (LTS)
-* Spring Boot 3.5
+* Spring Boot 4.1.1
 * Spring Security
 * Spring Data JPA
+* Spring Cloud
 * Spring for Apache Kafka
